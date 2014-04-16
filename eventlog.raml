@@ -1,4 +1,3 @@
-
 #%RAML 0.8
 
 # Example event logging API as described in InfoQ article in March 2014.
@@ -105,15 +104,14 @@ traits:
           application/json:
             schema: eventListJson
             example: !include eventListExample.json
-    
-/streams/{streamName}/{eventId}:
-  get: 
+  /{eventId}:
+   get: 
     description: Get a particular Event by its Id.
     responses:
-      200:
-        description: Returns the requested event.
-        body:
-          application/json:
-            schema: eventJson
-            example: !include eventExample.json
+     200:
+      description: Returns the requested event.
+      body:
+       application/json:
+        schema: eventJson
+        example: !include eventExample.json
 
